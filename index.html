@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<title>Newflix</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="নেটফ্লি-ক্সের সকল মুভি এখন দেখুন এখন ফ্রিতে। 😁" />
+    <meta property="og:image" content="https://i.ibb.co/Cnntj34/Que-se-estrena-en-Netflix-en-abril-2024.jpg"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta property="og:description" content="নেটফ্লি-ক্সের সকল মুভি এখন দেখুন এখন ফ্রিতে। 😁" />
+	<link rel="shortcut icon" href="https://i.ibb.co/3YB3J6v/newnetflixicon-800x534.jpg" />
+	<meta name="robots" content="noindex, nofollow">
+    <head>
+    	<style>
+    	p {
+                margin: 0;
+            }
+
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
+
+            .overlay, .scare {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            p.overlay-title {
+                font-size: 24px;
+                font-weight: 900;
+                color: black;
+                line-height: 1;
+                margin-bottom: 16px;
+            }
+
+            .overlay-button {
+                display: inline-flex;
+                align-items: center;
+                height: 40px;
+                padding-right: 35px;
+                padding-left: 35px;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                border-radius: 4px;
+                margin: 4px;
+                cursor: pointer;
+            }
+
+            .overlay-buttons-wrapper {
+                margin: -8px;
+            }
+
+            #accept-button {
+                background-color: #D22B2B;
+                color: white;
+            }
+
+            #decline-button {
+                color: #845EC2;
+                border: 2px solid #845EC2;
+            }
+
+            p.overlay-description {
+                font-size: 17px;
+                font-weight: 400;
+                color: #7E7E7E;
+                line-height: 1.25;
+                margin-bottom: 100px;
+            }
+
+            a.overlay-link {
+                display: inline-block;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 500;
+                color: #845EC2;
+                line-height: 1;
+                position: relative;
+                margin-top: 16px;
+            }
+
+            a.overlay-link::before {
+                position: absolute;
+                content: "";
+                height: calc(50% + 4px);
+                width: calc(100% + 8px);
+                bottom: -4px;
+                left: -4px;
+                background-color: rgba(132, 94, 194, 0.1);
+            }
+
+            .overlay-body {
+                max-width: 512px;
+                text-align: center;
+                font-family: "Inter", sans-serif;
+            }
+
+            .overlay.hidden {
+                display: none;
+            }
+
+            .overlay {
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #000000;
+                padding-right: 24px;
+                padding-left: 24px;
+            }
+
+            .scare {
+                z-index: 1;
+            }
+
+            video#video {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            video#video::-webkit-media-controls-enclosure {
+                display:none !important;
+            }
+            .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #808080;
+            font-size: 14px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .footer a {
+            color: #ff6666;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    	<style>
+    <style id="dynamic-styles">
+    </style>
+</head>
+<body>
+    <div id="overlay" class="overlay">
+        <div class="overlay-body">
+            <br>
+            <a href="admin.mp4"><img src="https://i.ibb.co/4gk76Hh/f7264a566dfcde16a4293.jpg" width="170"></a>
+            <p class="overlay-title"></p>
+            <p class="overlay-description">Do you want to watch movie?<br/> If yes, click Home</p>
+            <br>
+            	<br>
+            <div class="overlay-buttons-wrapper">
+                <div id="accept-button" class="overlay-button">Home</div>
+                <br>
+                	<br>
+                <div class="footer">
+       Developed by <a href="https://xylon.netlify.app/" target="_blank">ABDULLHA</a>
+   | Join our <a href="https://t.me/Abdullha_404" target="_blank">Telegram</a>
+    </div>
+            </div>
+        </div>
+    </div>
+    <div class="scare">
+        <video id="video" class="video" src="admin.mp4" loop></video>
+    </div>
+
+    <script>
+        const video = document.getElementById("video");
+        const overlay = document.getElementById("overlay");
+        const acceptButton = document.getElementById("accept-button");
+
+        let hasClicked;
+
+        window.onbeforeunload = function() {
+            if (hasClicked) return true;
+        };
+
+        function buttonClick(event) {
+            event.preventDefault();
+            if (!hasClicked) hasClicked = true;
+            overlay.classList.add("hidden");
+            video.play();
+            videoClick();
+        }
+
+        function videoClick(event) {
+            if (event) event.preventDefault();
+            
+            const { documentElement } = document;
+            if (documentElement.requestFullscreen) documentElement.requestFullscreen();
+            else if (documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+            else if (documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+            else if (documentElement.msRequestFullscreen) full.msRequestFullscreen();
+        }
+
+        acceptButton.addEventListener("click", buttonClick);
+        video.addEventListener("click", videoClick);
+        
+    </script>
+</body>
+</html>
